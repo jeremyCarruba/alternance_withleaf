@@ -2,31 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Person List</title>
+    <title th:utext="${character.name}"></title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <h1>Character List</h1>
-<a href="addCharacter">Add Character</a>
+<a>Specs</a>
 <br/><br/>
 <div>
     <table border="1">
         <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Type</th>
-            <th>Type</th>
         </tr>
-
-        <tr th:each ="character : ${characters}">
-
-            <td th:utext="${character.id}">...</td>
+        <tr>
             <td th:utext="${character.name}">...</td>
             <td th:utext="${character.type}">...</td>
-            <td><a th:href="|/characters/${character.id}|">Edit</a></td>
-
         </tr>
     </table>
+</div>
+<div>
+    <a th:href="|/characters/edit/${character.id}|">Edit</a>
+    <a th:href="|/characters/delete/${character.id}|">Delete</a>
 </div>
 </body>
 </html>

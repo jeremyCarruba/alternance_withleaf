@@ -1,5 +1,8 @@
 package com.withleaf.withleaf.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Character {
     private int id;
     private String name;
@@ -7,7 +10,6 @@ public class Character {
 
     public Character() {
     }
-
 
     public Character(int id, String name, String type) {
         this.id = id;
